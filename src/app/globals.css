@@ -1,6 +1,8 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Import Tailwind base, components, and utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,54 +10,37 @@
 /* Import theme toggle styles */
 @import './styles/themeToggle.css';
 
-body {
-  font-family: 'Inter Tight', sans-serif;
+/* Light theme variables */
+:root {
+  --background: #F5F9FF;
+  --text-color: #333;
+  --primary-color: #8fb5f5; /* Light blue background for theme toggle */
+  --secondary-color: #f5eb42; /* Light yellow for the sun */
+  --sun-moon-color: #ddd; /* Light moon color */
+  --clouds-opacity: 0.4;
+  --stars-opacity: 0;
 }
 
-.font-rubik {
+/* Dark theme variables */
+[data-theme='dark'] {
+  --background: #121212; /* Dark background */
+  --text-color: #f5f5f5; /* Light text on dark background */
+  --primary-color: #2b3e65; /* Dark blue for theme toggle */
+  --secondary-color: #2b2b2b; /* Dark grey for the moon */
+  --sun-moon-color: #f5f5f5; /* Lighter moon color */
+  --clouds-opacity: 0.2;
+  --stars-opacity: 1;
+}
+
+/* Body styling */
+body {
+  background-color: var(--background);
+  color: var(--text-color);
   font-family: 'Rubik', sans-serif;
 }
 
-/* Dark theme styles */
-.dark body {
-  background-color: var(--color-dark);
-  color: var(--color-offwhite);
-}
-
-.dark .bg-white {
-  background-color: var(--color-darkGray);
-}
-
-.dark h1 {
-  color: var(--color-offwhite);
-}
-
-.dark input[type="text"] {
-  background-color: var(--color-dark);
-  border-color: var(--color-gray);
-  color: var(--color-offwhite);
-}
-
-.dark input[type="text"]::placeholder {
-  color: var(--color-gray);
-}
-
-.dark button {
-  background-color: #3450A1;
-}
-
-.dark .hover\:bg-gray-100:hover {
-  background-color: var(--color-dark);
-}
-
-.dark .text-gray-400 {
-  color: var(--color-gray);
-}
-
-.dark .border-gray-200 {
-  border-color: var(--color-gray);
-}
-
-.dark .text-gray-800 {
-  color: var(--color-offwhite);
+/* Tailwind classes for dark mode support */
+body[data-theme='dark'] {
+  background-color: var(--background);
+  color: var(--text-color);
 }
