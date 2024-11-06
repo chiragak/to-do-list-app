@@ -1,5 +1,5 @@
 'use client';
-
+import ThemeToggle from './components/ThemeToggle';
 import { useState } from 'react';
 import AddTaskForm from './components/AddTaskForm';
 import Task from './components/Task';
@@ -24,11 +24,14 @@ export default function Home() {
   };
 
   return (
+    
     <div className="flex flex-col h-screen items-center justify-center">
+       <ThemeToggle />
       <div 
         className="bg-white px-48 py-12 w-[1000px] h-[670px] rounded-[32px] relative"
         style={{ boxShadow: '0px 0px 4px 0px #00174726' }}
       >
+
         <h1 className="text-5xl font-semibold mb-10 font-rubik text-primary-dark my-10">
           Daily To Do List
         </h1>

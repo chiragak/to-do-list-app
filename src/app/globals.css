@@ -5,11 +5,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import theme toggle styles */
+@import './styles/themeToggle.css';
+
 body {
-  font-family: 'Inter Tight', sans-serif; /* Default font */
+  font-family: 'Inter Tight', sans-serif;
 }
 
-/* Adding a custom Rubik font class */
 .font-rubik {
   font-family: 'Rubik', sans-serif;
+}
+
+/* Dark theme styles */
+.dark body {
+  background-color: var(--color-dark);
+  color: var(--color-offwhite);
+}
+
+.dark .bg-white {
+  background-color: var(--color-darkGray);
+}
+
+.dark h1 {
+  color: var(--color-offwhite);
+}
+
+.dark input[type="text"] {
+  background-color: var(--color-dark);
+  border-color: var(--color-gray);
+  color: var(--color-offwhite);
+}
+
+.dark input[type="text"]::placeholder {
+  color: var(--color-gray);
+}
+
+.dark button {
+  background-color: #3450A1;
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: var(--color-dark);
+}
+
+.dark .text-gray-400 {
+  color: var(--color-gray);
+}
+
+.dark .border-gray-200 {
+  border-color: var(--color-gray);
+}
+
+.dark .text-gray-800 {
+  color: var(--color-offwhite);
 }
