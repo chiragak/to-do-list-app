@@ -1,22 +1,25 @@
+import { FaCheck } from 'react-icons/fa';
+
 const Task = ({ task, onMarkCompleted }) => {
-    return (
+  return (
+    <div
+      className="flex items-center p-2 mt-2 rounded-lg hover:bg-gray-100 cursor-pointer"
+      onClick={() => onMarkCompleted(task.id)}
+    >
       <div
-        className={`flex items-center justify-between p-2 mt-2 rounded-lg hover:bg-gray-100 ${
-          task.completed ? 'bg-green-100' : ''
+        className={`mr-3 w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+          task.completed ? 'bg-green-500 border-green-500' : 'bg-white border-gray-300'
         }`}
-        onClick={() => onMarkCompleted(task.id)}
       >
-        <div className={`flex items-center ${task.completed ? 'line-through text-gray-400' : ''}`}>
-          <input
-            type="checkbox"
-            checked={task.completed}
-            readOnly
-            className="mr-2 w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <span className="sm:text-base text-sm">{task.text}</span>
-        </div>
+        {task.completed && <FaCheck className="text-white text-sm" />}
       </div>
-    );
-  };
-  
-  export default Task;
+      <span
+        className={`text-base ${task.completed ? 'line-through text-gray-400' : ''} hover:text-blue-500`}
+      >
+        {task.text}
+      </span>
+    </div>
+  );
+};
+
+export default Task;
