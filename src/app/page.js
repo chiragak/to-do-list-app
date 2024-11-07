@@ -235,7 +235,7 @@ export default function TodoApp() {
        </div>
      </div>
 
-     {/* Displaying the "All tasks complete!" message */}
+
      {showMessage && (
       <div className="fixed bottom-8 right-8 bg-green-500 text-white text-xl py-2 px-4 rounded-lg shadow-lg">
       All tasks completed! 🎉
