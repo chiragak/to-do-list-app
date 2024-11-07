@@ -1,6 +1,7 @@
 # To-Do List App
 
 A simple and customizable to-do list app built with React that allows users to add, edit, mark tasks as completed, delete tasks, and manage their tasks effectively. The app also supports theme toggling (light/dark mode) and is fully responsive.
+To see the live deployment, visit https://to-do-list-app-eosin-sigma.vercel.app/.
 
 ## Features
 
