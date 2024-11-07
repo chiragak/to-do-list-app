@@ -16,7 +16,7 @@ export default function NotFound() {
 
         {/* Additional explanation */}
         <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          It seems like you've followed a broken link or typed the URL incorrectly.
+          It seems like you&apos;ve followed a broken link or typed the URL incorrectly.
         </p>
         
         {/* Button to go back home */}
