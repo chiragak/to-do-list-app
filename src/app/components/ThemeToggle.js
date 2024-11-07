@@ -2,12 +2,10 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-
-const ThemeToggle = () => {
+export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -21,7 +19,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <label className="theme-switch">
+    <label className="theme-switch absolute top-4 md:top-6 right-4 md:right-6">
       <input 
         type="checkbox" 
         className="theme-switch__checkbox"
@@ -47,6 +45,4 @@ const ThemeToggle = () => {
       </div>
     </label>
   );
-};
-
-export default ThemeToggle;
+}
